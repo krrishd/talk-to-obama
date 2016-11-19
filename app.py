@@ -33,10 +33,10 @@ def index():
 
   for i in range(2):
     #newSpeech += " " + model.make_short_sentence(140)
-    newSpeech += " Quote: " + model.make_sentence() + " endquote."
+    newSpeech += " " + model.make_sentence()
 
   return jsonify({
-    "content": newSpeech,
+    "content": "Quote: " + newSpeech + " endquote.",
     "prefacingText": prefacingText
   })
 
