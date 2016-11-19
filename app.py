@@ -31,7 +31,7 @@ def index():
     rawText = f.read()
 '''
   with open('allspeeches.txt') as f:
-      rawText = f.read()
+    rawText = f.read()
 
   model = markovify.Text(rawText, state_size=3)
 
