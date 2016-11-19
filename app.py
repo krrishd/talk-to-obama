@@ -26,10 +26,6 @@ def index():
 
   newSpeech = ""
 
-'''
-  with open('raw.txt') as f:
-    rawText = f.read()
-'''
   with open('allspeeches.txt') as f:
     rawText = f.read()
 
