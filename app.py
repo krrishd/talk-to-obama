@@ -13,7 +13,7 @@ def index():
   newSpeech = ""
 
   with open('raw.txt') as f:
-    rawText = unicode(f.read())
+    rawText = f.read()
 
   model = markovify.Text(rawText, state_size=1)
 
