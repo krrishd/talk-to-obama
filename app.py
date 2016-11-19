@@ -20,7 +20,7 @@ def index():
 
   prefacingText = ""
 
-  if len(request.args.get('issue')) > 0:
+  if request.args.get('issue') != None:
     issue = unicode(request.args.get('issue'))
     prefacingText = (setOfPrefacingTemplates[random.randint(0, len(setOfPrefacingTemplates) - 1)] % locals())
 
