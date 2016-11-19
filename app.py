@@ -29,7 +29,7 @@ def index():
   with open('raw.txt') as f:
     rawText = f.read()
 
-  model = markovify.Text(rawText, state_size=1)
+  model = markovify.Text(rawText, state_size=3)
 
   for i in range(1):
     newSpeech += " " + model.make_short_sentence(140)
