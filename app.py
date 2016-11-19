@@ -9,10 +9,10 @@ app = Flask(__name__)
 
 setOfPrefacingTemplates = [
   "Good question: %(issue)s is a contentious issue.",
-  "%(issue)s, eh. I was hoping you'd ask me that.",
-  "I normally don't like to talk about %(issue)s, but I'll do you a favor this one time.",
+  "%(issue)s, eh. He was hoping you'd ask that.",
+  "He normally doesn't like to talk about %(issue)s, but he'll make an exception this one time.",
   "I mean is %(issue)s really that relevant? Especially in the context of this discussion?",
-  "I have my own personal opinions about %(issue)s, but within my capacity as President, here's what I think:"
+  "He has his own personal opinions about %(issue)s, but within his capacity as President, here's what he thinks:"
 ]
 
 @app.route('/chat', methods=["GET"])
