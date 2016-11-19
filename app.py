@@ -26,13 +26,18 @@ def index():
 
   newSpeech = ""
 
+'''
   with open('raw.txt') as f:
     rawText = f.read()
+'''
+  with open('allspeeches.txt') as f:
+      rawText = f.read()
 
   model = markovify.Text(rawText, state_size=3)
 
-  for i in range(1):
-    newSpeech += " " + model.make_short_sentence(140)
+  for i in range(2):
+    #newSpeech += " " + model.make_short_sentence(140)
+    newSpeech += " " + model.make_sentence()
 
   return jsonify({
     "content": newSpeech,
