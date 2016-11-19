@@ -9,9 +9,7 @@ app = Flask(__name__)
 
 @app.route('/chat', methods=["GET"])
 def index():
-
-  userSpeech = request.args.get('user').encode('utf-8')
-
+  
   newSpeech = ""
 
   with open('raw.txt') as f:
