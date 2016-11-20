@@ -5,6 +5,13 @@ import markovify
 import random
 import os
 
+def is_int(input):
+  try:
+    num = int(input)
+  except ValueError:
+    return False
+  return True
+
 app = Flask(__name__)
 
 setOfPrefacingTemplates = [
