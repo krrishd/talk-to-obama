@@ -1,11 +1,16 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, jsonify, request
+from flask.ext.cors import CORS, cross_origin
 import markovify
 import random
 import os
 
 app = Flask(__name__)
+cors = CORS(app)
+
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 
 setOfPrefacingTemplates = [
   "Good question: %(issue)s is a contentious issue. Here's what Obama says:",
@@ -15,7 +20,8 @@ setOfPrefacingTemplates = [
   "He has his own personal opinions about %(issue)s, but within his capacity as President, here's what he thinks:"
 ]
 
-@app.route('/chat', methods=["GET"])
+@app.route('/chat', methods=["GET", "OPTIONS"])
+@crossdomain(origin='*')
 def index():
 
   prefacingText = ""
