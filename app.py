@@ -8,10 +8,10 @@ import os
 app = Flask(__name__)
 
 setOfPrefacingTemplates = [
-  "Good question: %(issue)s is a contentious issue.",
+  "Good question: %(issue)s is a contentious issue. Here's what Obama says:",
   "%(issue)s, eh. He was hoping you'd ask that.",
   "He normally doesn't like to talk about %(issue)s, but he'll make an exception this one time.",
-  "I mean is %(issue)s really that relevant? Especially in the context of this discussion?",
+  "I mean is %(issue)s really that relevant? Obama will make an exception just this once.",
   "He has his own personal opinions about %(issue)s, but within his capacity as President, here's what he thinks:"
 ]
 
