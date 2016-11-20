@@ -19,25 +19,31 @@ setOfPrefacingTemplates = [
 def index():
 
   prefacingText = ""
+  size = ""
 
   if request.args.get('issue') != None:
     issue = unicode(request.args.get('issue'))
     prefacingText = (setOfPrefacingTemplates[random.randint(0, len(setOfPrefacingTemplates) - 1)] % locals())
 
+  if request.args.get('size') != None:
+    size = unicode(request.args.get('size'))
+
   newSpeech = ""
 
-'''
-  with open('raw.txt') as f:
-    rawText = f.read()
-'''
   with open('allspeeches.txt') as f:
     rawText = f.read()
 
   model = markovify.Text(rawText, state_size=3)
 
-  for i in range(2):
-    #newSpeech += " " + model.make_short_sentence(140)
-    newSpeech += " " + model.make_sentence()
+  if size == "":
+    for i in range(2):
+      #newSpeech += " " + model.make_short_sentence(140)
+      newSpeech += " " + model.make_sentence()
+  elif size == "tweet":
+      newSpeech += " " + model.make_short_sentence(140)
+  elif is_int(size):
+      for i in range(int(size)):
+          newSpeech += " " + model.make_sentence()
 
   return jsonify({
     "content": newSpeech,
