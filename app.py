@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, jsonify, request
+from flask_cors import CORS, cross_origin
 import markovify
 import random
 import os
@@ -13,6 +14,7 @@ def is_int(input):
   return True
 
 app = Flask(__name__)
+CORS(app)
 
 setOfPrefacingTemplates = [
   "Good question: %(issue)s is a contentious issue. Here's what Obama says:",
@@ -23,6 +25,7 @@ setOfPrefacingTemplates = [
 ]
 
 @app.route('/chat', methods=["GET", "OPTIONS"])
+@cross_origin()
 def index():
 
   prefacingText = ""
