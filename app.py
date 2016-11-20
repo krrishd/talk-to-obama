@@ -47,13 +47,16 @@ def index():
 
   if size == "":
     for i in range(2):
-      #newSpeech += " " + model.make_short_sentence(140)
-      newSpeech += " " + model.make_sentence()
+      if (i > 0):
+        newSpeech += " "
+      newSpeech += model.make_sentence()
   elif size == "tweet":
-    newSpeech += " " + model.make_short_sentence(140)
+    newSpeech += model.make_short_sentence(140)
   elif is_int(size):
     for i in range(int(size)):
-      newSpeech += " " + model.make_sentence()
+      if (i > 0):
+        newSpeech += " "
+      newSpeech += model.make_sentence()
 
   return jsonify({
     "content": newSpeech,
