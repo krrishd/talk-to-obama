@@ -1,6 +1,6 @@
 # talk-to-obama
 
-Simple Flask server running a Markov chain off of Obama's speech transcripts, exposing random sentences at [talk-to-obama.herokuapp.com/chat].
+Simple Flask server running a Markov chain off of Obama's speech transcripts, exposing random sentences at http://talk-to-obama.herokuapp.com/chat
 
 ## How To Use
 
