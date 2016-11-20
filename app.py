@@ -36,7 +36,7 @@ def index():
     newSpeech += " " + model.make_sentence()
 
   return jsonify({
-    "content": "Quote: " + newSpeech + " endquote.",
+    "content": newSpeech,
     "prefacingText": prefacingText
   })
 
